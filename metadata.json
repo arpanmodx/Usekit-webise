@@ -1,0 +1,6 @@
+{
+  "name": "UseKit — Everyday Tools. All in One Place.",
+  "description": "UseKit is a fast, privacy-first all-in-one utility tools platform with calculators, converters, text utilities, developer tools, and everyday web tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
