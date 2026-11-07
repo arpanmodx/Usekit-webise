@@ -3,7 +3,7 @@
 # 🧰 UseKit
 ### *Everyday Tools. All in One Place.*
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge&logo=github-actions)](https://usekit.vercel.app)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge&logo=github-actions)](https://usekit-daily.vercel.app)
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -11,10 +11,10 @@
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-orange?style=for-the-badge&logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](CONTRIBUTING.md)
 
-**[Explore Live Demo](https://usekit.vercel.app)** • **[Browse All 90 Tools](#-all-90-built-in-tools)** • **[Architecture](#%EF%B8%8F-architecture--project-structure)** • **[Quick Start](#-quick-start)** • **[Deployment](#-deployment-guide)** • **[Contributing Guide](#-contributing)**
+**[Explore Live Demo](https://usekit-daily.vercel.app)** • **[Browse All 90 Tools](#-all-90-built-in-tools)** • **[Architecture](#%EF%B8%8F-architecture--project-structure)** • **[Quick Start](#-quick-start)** • **[Deployment](#-deployment-guide)** • **[Contributing Guide](#-contributing)**
 
 <p align="center">
-  <img src="https://usekit.vercel.app/api/og?title=UseKit&subtitle=All%20Your%20Everyday%20Tools%20in%20One%20Place" alt="UseKit Banner" width="800" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
+  <img src="https://usekit-daily.vercel.app/api/og?title=UseKit&subtitle=All%20Your%20Everyday%20Tools%20in%20One%20Place" alt="UseKit Banner" width="800" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
 </p>
 
 </div>

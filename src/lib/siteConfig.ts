@@ -1,11 +1,29 @@
 export function getSiteUrl(): string {
-  let raw = 'https://usekit.vercel.app';
+  let raw = 'https://usekit-daily.vercel.app';
+  try {
+    if (typeof window !== 'undefined' && window.location?.origin) {
+      const origin = window.location.origin;
+      if (
+        !origin.includes('localhost') &&
+        !origin.includes('127.0.0.1') &&
+        !origin.includes('asia-east1.run.app')
+      ) {
+        return origin.replace(/\/+$/, '');
+      }
+    }
+  } catch {
+    // Ignore
+  }
+
   try {
     if (typeof process !== 'undefined' && process.env) {
+      const appUrl = process.env.APP_URL;
+      const validAppUrl =
+        appUrl && !appUrl.includes('asia-east1.run.app') ? appUrl : undefined;
       raw =
         process.env.NEXT_PUBLIC_SITE_URL ||
         process.env.VITE_SITE_URL ||
-        process.env.APP_URL ||
+        validAppUrl ||
         raw;
     }
   } catch {

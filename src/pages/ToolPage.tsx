@@ -2,6 +2,7 @@ import React, { Suspense, useState } from 'react';
 import { Star, Share2, ShieldCheck, Check } from 'lucide-react';
 import { getRelatedTools, type ToolDefinition } from '../lib/tools';
 import { TOOL_COMPONENTS } from '../lib/toolLoaders';
+import { getSiteUrl } from '../lib/siteConfig';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { ToolIcon } from '../components/ui/ToolIcon';
 import { FAQAccordion } from '../components/ui/FAQAccordion';
@@ -99,7 +100,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({
             )}
           </Button>
           <a
-            href={`https://wa.me/?text=${encodeURIComponent(`${tool.name} — ${tool.shortDescription} https://usekit.vercel.app/${tool.slug}`)}`}
+            href={`https://wa.me/?text=${encodeURIComponent(`${tool.name} — ${tool.shortDescription} ${getSiteUrl()}/${tool.slug}`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
@@ -107,7 +108,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({
             WhatsApp
           </a>
           <a
-            href={`https://t.me/share/url?url=${encodeURIComponent(`https://usekit.vercel.app/${tool.slug}`)}&text=${encodeURIComponent(tool.name)}`}
+            href={`https://t.me/share/url?url=${encodeURIComponent(`${getSiteUrl()}/${tool.slug}`)}&text=${encodeURIComponent(tool.name)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
