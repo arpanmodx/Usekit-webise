@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { getToolBySlug, getCategoryBySlug } from './lib/tools';
+import { SITE_CONFIG } from './lib/siteConfig';
 import {
   buildHomeMetadata,
   buildToolMetadata,
@@ -100,6 +101,56 @@ export default function App() {
     return () => {
       window.removeEventListener('popstate', onPopState);
       window.removeEventListener('usekit:open-search', onOpenSearchEvent);
+    };
+  }, []);
+
+  // Open Smartlink once per session on first user click/tap while keeping current tab intact
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
+    const SESSION_KEY = 'usekit_smartlink_opened';
+    try {
+      if (window.sessionStorage.getItem(SESSION_KEY) === '1') {
+        return;
+      }
+    } catch {
+      // Ignore storage access errors in strict privacy modes
+    }
+
+    const handleFirstClick = (event: MouseEvent) => {
+      if (!event.isTrusted) return;
+
+      try {
+        if (window.sessionStorage.getItem(SESSION_KEY) === '1') {
+          document.removeEventListener('click', handleFirstClick, true);
+          return;
+        }
+        window.sessionStorage.setItem(SESSION_KEY, '1');
+      } catch {
+        // Ignore storage errors
+      }
+
+      document.removeEventListener('click', handleFirstClick, true);
+
+      const target = event.target as HTMLElement | null;
+      if (target?.closest('a[rel~="sponsored"]')) {
+        return;
+      }
+
+      const anchor = document.createElement('a');
+      anchor.href = SITE_CONFIG.directAdLinkUrl;
+      anchor.target = '_blank';
+      anchor.rel = 'noopener sponsored';
+      anchor.referrerPolicy = 'strict-origin-when-cross-origin';
+      anchor.style.display = 'none';
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+    };
+
+    document.addEventListener('click', handleFirstClick, true);
+    return () => {
+      document.removeEventListener('click', handleFirstClick, true);
     };
   }, []);
 
