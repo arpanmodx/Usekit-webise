@@ -2,6 +2,9 @@
   "rewrites": [
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/20ee3b85-011d-4192-95cc-8f57ad0dd93a.txt", "destination": "/20ee3b85-011d-4192-95cc-8f57ad0dd93a.txt" },
+    { "source": "/google20ee3b85-011d-4192-95cc-8f57ad0dd93a.html", "destination": "/google20ee3b85-011d-4192-95cc-8f57ad0dd93a.html" },
+    { "source": "/20ee3b85-011d-4192-95cc-8f57ad0dd93a.html", "destination": "/20ee3b85-011d-4192-95cc-8f57ad0dd93a.html" },
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
