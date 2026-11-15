@@ -168,7 +168,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({
       <RectangleAdBanner routeKey={tool.slug} className="mt-8" />
 
       <div className="mt-6 flex flex-wrap justify-center gap-3">
-        {SITE_CONFIG.smartLinks.slice(0, 2).map((link) => (
+        {SITE_CONFIG.smartLinks.map((link) => (
           <a
             key={link.id}
             href={link.url}

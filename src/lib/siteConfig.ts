@@ -77,6 +77,11 @@ export const SITE_CONFIG = {
   directAdLinkUrl: 'https://araplhn.org/4/38abcde1f415ac84b6e48b711cf82e3e',
   smartLinks: [
     {
+      id: '32285957',
+      label: 'Discover Featured Resources →',
+      url: 'https://araplhn.org/4/38abcde1f415ac84b6e48b711cf82e3e',
+    },
+    {
       id: '32285739',
       label: 'Explore Featured Partner Tools →',
       url: 'https://asiafilm.org/4/42129c6a2706766cb389ff8554a4e364',
@@ -85,11 +90,6 @@ export const SITE_CONFIG = {
       id: '32286720',
       label: 'Recommended Web Offers →',
       url: 'https://asiafilm.org/4/5c60cc61ae51fb58152b63506543f139',
-    },
-    {
-      id: '32285957',
-      label: 'Discover Featured Resources →',
-      url: 'https://araplhn.org/4/38abcde1f415ac84b6e48b711cf82e3e',
     },
   ],
   organization: {

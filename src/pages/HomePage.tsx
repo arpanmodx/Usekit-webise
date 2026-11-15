@@ -322,7 +322,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <AdSlot slotId="homepage-mid" format="horizontal" />
             <RectangleAdBanner routeKey="home-mid" className="my-4" />
             <div className="flex flex-wrap justify-center gap-3">
-              {SITE_CONFIG.smartLinks.slice(0, 2).map((link) => (
+              {SITE_CONFIG.smartLinks.map((link) => (
                 <a
                   key={link.id}
                   href={link.url}

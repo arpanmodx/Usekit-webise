@@ -70,7 +70,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
       <ResponsiveBannerAd routeKey={`cat-${category.slug}`} className="py-2" />
 
       <div className="flex flex-wrap justify-center gap-3">
-        {SITE_CONFIG.smartLinks.slice(0, 2).map((link) => (
+        {SITE_CONFIG.smartLinks.map((link) => (
           <a
             key={link.id}
             href={link.url}
