@@ -14,6 +14,11 @@ import { SITE_CONFIG } from '../lib/siteConfig';
 import { ToolCard } from '../components/ui/ToolCard';
 import { ToolIcon } from '../components/ui/ToolIcon';
 import { AdSlot } from '../components/ui/AdSlot';
+import {
+  ResponsiveBannerAd,
+  RectangleAdBanner,
+  CompactBannerAd,
+} from '../components/ui/AdBanner';
 
 export interface HomePageProps {
   onNavigate: (href: string) => void;
@@ -133,6 +138,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-16">
+        <ResponsiveBannerAd routeKey="home-top" className="pt-2" />
         {/* Interactive Category Filter Bar */}
         <section aria-label="Filter tools by category">
           <div className="flex items-center gap-1.5 overflow-x-auto pb-2">
@@ -314,6 +320,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </section>
 
             <AdSlot slotId="homepage-mid" format="horizontal" />
+            <RectangleAdBanner routeKey="home-mid" className="my-4" />
 
             {/* Browse by Category */}
             <section id="categories" aria-labelledby="categories-heading" className="space-y-5">
@@ -366,6 +373,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                 })}
               </div>
             </section>
+
+            <CompactBannerAd routeKey="home-bottom" className="my-4" />
 
             {/* All Calculators Directory & Recently Added */}
             <section aria-labelledby="all-tools-heading" className="space-y-5">

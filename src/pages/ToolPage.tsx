@@ -8,6 +8,12 @@ import { ToolIcon } from '../components/ui/ToolIcon';
 import { FAQAccordion } from '../components/ui/FAQAccordion';
 import { ToolCard } from '../components/ui/ToolCard';
 import { AdSlot } from '../components/ui/AdSlot';
+import {
+  ResponsiveBannerAd,
+  RectangleAdBanner,
+  CompactBannerAd,
+  SkyscraperAdBanner,
+} from '../components/ui/AdBanner';
 import { Button } from '../components/ui/Button';
 import { ToolErrorBoundary } from '../components/ui/ToolErrorBoundary';
 
@@ -40,7 +46,8 @@ export const ToolPage: React.FC<ToolPageProps> = ({
   };
 
   return (
-    <article className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 flex flex-col xl:flex-row gap-8 items-start">
+      <article className="flex-1 min-w-0 w-full max-w-5xl mx-auto">
       <Breadcrumbs
         onNavigate={onNavigate}
         items={[
@@ -118,6 +125,8 @@ export const ToolPage: React.FC<ToolPageProps> = ({
         </div>
       </header>
 
+      <ResponsiveBannerAd routeKey={tool.slug} className="mb-6" />
+
       {/* Main Interactive Tool Workbench */}
       <section
         aria-label={`${tool.name} Interactive Workspace`}
@@ -156,6 +165,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({
 
       {/* AdSlot placed strictly outside tool controls */}
       <AdSlot slotId={`tool-${tool.slug}-below`} format="horizontal" />
+      <RectangleAdBanner routeKey={tool.slug} className="mt-8" />
 
       <div className="mt-6 flex justify-center">
         <a
@@ -221,6 +231,8 @@ export const ToolPage: React.FC<ToolPageProps> = ({
       {/* FAQ Accordion */}
       <FAQAccordion faqs={tool.faqs} title={`${tool.name} — Frequently Asked Questions`} />
 
+      <CompactBannerAd routeKey={tool.slug} className="mt-10" />
+
       {/* Related Tools */}
       {relatedTools.length > 0 && (
         <section aria-labelledby="related-tools-heading" className="mt-14">
@@ -248,11 +260,21 @@ export const ToolPage: React.FC<ToolPageProps> = ({
                 key={rel.slug}
                 tool={rel}
                 onNavigate={onNavigate}
+                isFavorite={false}
               />
             ))}
           </div>
         </section>
       )}
-    </article>
+      </article>
+
+      {/* Desktop 160x600 Sticky Skyscraper Sidebar */}
+      <aside
+        aria-label="Sidebar Advertisement"
+        className="hidden xl:flex flex-col items-center shrink-0 w-[160px] sticky top-24 pt-2"
+      >
+        <SkyscraperAdBanner routeKey={tool.slug} />
+      </aside>
+    </div>
   );
 };

@@ -12,6 +12,7 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { CommandPalette } from './components/layout/CommandPalette';
 import { CookieBanner } from './components/ui/CookieBanner';
+import { NativeAdBanner } from './components/ui/AdBanner';
 import { HomePage } from './pages/HomePage';
 import { ToolPage } from './pages/ToolPage';
 import { CategoryPage } from './pages/CategoryPage';
@@ -202,6 +203,8 @@ export default function App() {
       <main id="main-content" className="flex-1">
         {renderRoute()}
       </main>
+
+      <NativeAdBanner className="mt-10" />
 
       <Footer onNavigate={navigate} />
 
