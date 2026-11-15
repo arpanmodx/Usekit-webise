@@ -40,7 +40,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   key={link.id}
                   href={link.url}
                   target="_blank"
-                  rel="noopener noreferrer sponsored"
+                  rel="noopener sponsored"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 transition-colors"
                 >
                   <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 dark:text-slate-500">

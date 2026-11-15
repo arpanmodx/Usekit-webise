@@ -327,7 +327,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                   key={link.id}
                   href={link.url}
                   target="_blank"
-                  rel="noopener noreferrer sponsored"
+                  rel="noopener sponsored"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500/60 text-slate-600 dark:text-slate-300 transition-colors shadow-xs"
                 >
                   <span className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px] uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400">
