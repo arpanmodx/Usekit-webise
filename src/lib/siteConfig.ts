@@ -74,6 +74,7 @@ export const SITE_CONFIG = {
   defaultDescription:
     'Free, fast, privacy-first online utility tools: calculators, unit converters, text utilities, image & PDF tools, and developer helpers in one place.',
   contactEmail: 'support@usekit.app',
+  directAdLinkUrl: 'https://araplhn.org/4/38abcde1f415ac84b6e48b711cf82e3e',
   organization: {
     name: 'UseKit',
     legalName: 'UseKit Web Utilities',

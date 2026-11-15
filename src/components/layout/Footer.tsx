@@ -34,6 +34,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Fast, accurate, privacy-first web utilities and calculators that run directly in your browser without uploading personal files or data.
             </p>
+            <div className="pt-2">
+              <a
+                href={SITE_CONFIG.directAdLinkUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 transition-colors"
+              >
+                <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 dark:text-slate-500">
+                  Sponsored
+                </span>
+                <span>Explore Featured Offers →</span>
+              </a>
+            </div>
           </div>
 
           {/* Column 2: Popular Tools */}

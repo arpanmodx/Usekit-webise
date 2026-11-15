@@ -2,7 +2,7 @@ import React, { Suspense, useState } from 'react';
 import { Star, Share2, ShieldCheck, Check } from 'lucide-react';
 import { getRelatedTools, type ToolDefinition } from '../lib/tools';
 import { TOOL_COMPONENTS } from '../lib/toolLoaders';
-import { getSiteUrl } from '../lib/siteConfig';
+import { getSiteUrl, SITE_CONFIG } from '../lib/siteConfig';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { ToolIcon } from '../components/ui/ToolIcon';
 import { FAQAccordion } from '../components/ui/FAQAccordion';
@@ -156,6 +156,20 @@ export const ToolPage: React.FC<ToolPageProps> = ({
 
       {/* AdSlot placed strictly outside tool controls */}
       <AdSlot slotId={`tool-${tool.slug}-below`} format="horizontal" />
+
+      <div className="mt-6 flex justify-center">
+        <a
+          href={SITE_CONFIG.directAdLinkUrl}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500/60 text-slate-600 dark:text-slate-300 transition-colors shadow-xs"
+        >
+          <span className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px] uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400">
+            Sponsored
+          </span>
+          <span>Discover Featured Partner Resources →</span>
+        </a>
+      </div>
 
       {/* How to Use Section */}
       <section aria-labelledby="how-to-heading" className="mt-12">
