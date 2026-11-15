@@ -4,6 +4,8 @@ import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { ToolCard } from '../components/ui/ToolCard';
 import { ToolIcon } from '../components/ui/ToolIcon';
 import { Button } from '../components/ui/Button';
+import { ResponsiveBannerAd } from '../components/ui/AdBanner';
+import { SITE_CONFIG } from '../lib/siteConfig';
 
 export interface CategoryPageProps {
   category: CategoryDefinition;
@@ -64,6 +66,25 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
           </Button>
         </div>
       )}
+
+      <ResponsiveBannerAd routeKey={`cat-${category.slug}`} className="py-2" />
+
+      <div className="flex flex-wrap justify-center gap-3">
+        {SITE_CONFIG.smartLinks.slice(0, 2).map((link) => (
+          <a
+            key={link.id}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500/60 text-slate-600 dark:text-slate-300 transition-colors shadow-xs"
+          >
+            <span className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px] uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400">
+              Sponsored
+            </span>
+            <span>{link.label}</span>
+          </a>
+        ))}
+      </div>
 
       {/* Other Categories */}
       <section aria-labelledby="other-categories-heading" className="pt-6 border-t border-slate-200 dark:border-slate-800">
